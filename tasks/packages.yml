@@ -1,0 +1,7 @@
+---
+
+- name: packages update list
+  apt: >
+    update_cache=yes
+    cache_valid_time=60
+  sudo: yes

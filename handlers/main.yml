@@ -1,0 +1,7 @@
+---
+
+- name: sudo restart
+  service: >
+    name=sudo
+    state=restarted
+  sudo: yes

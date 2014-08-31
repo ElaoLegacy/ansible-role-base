@@ -1,0 +1,35 @@
+---
+
+- name: vagrant environment
+  lineinfile: >
+    dest=/etc/environment
+    line='VAGRANT=1'
+    state=present
+  when: elao_vagrant
+  sudo: yes
+
+- name: vagrant environment not
+  lineinfile: >
+    dest=/etc/environment
+    line='VAGRANT=1'
+    state=absent
+  when: not elao_vagrant
+  sudo: yes
+
+- name: vagrant sudo
+  template: >
+    src=vagrant_env.j2
+    dest=/etc/sudoers.d/vagrant_env
+  notify:
+    - sudo restart
+  when: elao_vagrant
+  sudo: yes
+
+- name: vagrant sudo not
+  file: >
+    path=/etc/sudoers.d/vagrant_env
+    state=absent
+  notify:
+    - sudo restart
+  when: not elao_vagrant
+  sudo: yes

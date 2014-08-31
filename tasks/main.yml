@@ -1,6 +1,4 @@
 ---
 
-- name: update
-  apt: >
-    update_cache=yes
-  sudo: yes
+- include: packages.yml
+- include: vagrant.yml
