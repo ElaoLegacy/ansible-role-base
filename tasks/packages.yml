@@ -5,3 +5,25 @@
     update_cache=yes
     cache_valid_time=60
   sudo: yes
+
+- name: packages
+  apt: >
+    name={{ item }}
+    state=latest
+  with_items:
+    - unzip
+    - rsync
+    - wget
+    - curl
+    - acl
+    - vim
+  sudo: yes
+
+- name: vim config syntax highlighting
+  lineinfile: >
+    dest=/etc/vim/vimrc
+    line='syntax on'
+    regexp='^"syntax on'
+    state=present
+    backrefs=yes
+  sudo: yes
