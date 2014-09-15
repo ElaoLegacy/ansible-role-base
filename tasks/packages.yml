@@ -13,7 +13,6 @@
   with_items:
     - unzip
     - rsync
-    - wget
     - curl
     - acl
     - vim
