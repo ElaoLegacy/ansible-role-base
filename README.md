@@ -17,7 +17,7 @@ Role Handlers
 Role Variables
 --------------
 
-    elao_env: prod  # Environment used in relative roles (dev|prod|test|demo)
+    elao_env: prod  # Environment used in relative roles (dev|prod)
 
 
 Example Playbook
