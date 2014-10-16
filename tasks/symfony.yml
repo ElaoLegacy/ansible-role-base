@@ -1,0 +1,15 @@
+- name: symfony environment
+  lineinfile: >
+    dest=/etc/environment
+    line='SYMFONY_ENV=prod'
+    state=present
+  when: elao_symfony and elao_env == 'prod'
+  sudo: yes
+
+- name: symfony environment not
+  lineinfile: >
+    dest=/etc/environment
+    line='SYMFONY_ENV=prod'
+    state=absent
+  when: not elao_symfony or elao_env != 'prod'
+  sudo: yes

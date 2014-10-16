@@ -1,0 +1,11 @@
+---
+
+- name: group
+  shell: >
+    id -g -n {{ elao_base_user }}
+  register: group_result
+  changed_when: false
+  sudo: yes
+
+- set_fact:
+    elao_base_group: "{{ group_result.stdout }}"

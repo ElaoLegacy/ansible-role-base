@@ -1,4 +1,6 @@
 ---
 
+- include: group.yml
 - include: packages.yml
+- include: symfony.yml
 - include: vagrant.yml

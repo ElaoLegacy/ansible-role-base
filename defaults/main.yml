@@ -2,3 +2,8 @@
 
 elao_env: prod
 elao_vagrant: false
+elao_symfony: false
+
+elao_base_user:  "{{ ansible_ssh_user }}"
+elao_base_group: null
+elao_base_host:  "{{ ansible_fqdn }}"
