@@ -28,3 +28,9 @@
     state=present
     backrefs=yes
   sudo: yes
+
+- name: vim default editor
+  alternatives: >
+    name=editor
+    path=/usr/bin/vim.basic
+  sudo: yes
