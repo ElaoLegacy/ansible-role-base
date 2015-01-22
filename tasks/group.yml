@@ -6,6 +6,7 @@
   register: group_result
   changed_when: false
   sudo: yes
+  always_run: yes
 
 - set_fact:
     elao_base_group: "{{ group_result.stdout }}"
